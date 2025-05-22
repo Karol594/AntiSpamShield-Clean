@@ -1,6 +1,8 @@
 import os
 from telegram.ext import ApplicationBuilder
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")  # ENV ішинен оқыйды
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 application = ApplicationBuilder().token(BOT_TOKEN).build()
+
+application.run_polling()
